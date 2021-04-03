@@ -8,8 +8,10 @@ void increment(int *xptr)
 int main()
 {
     int x = 10;
+
+    
     increment(&x);
-    cout<<x<<endl;
+    cout << x << endl;
 
     return 0;
 }
