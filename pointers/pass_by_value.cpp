@@ -9,7 +9,7 @@ int man()
 {
     int a = 10;
     increment(a);
-    cout<<" inside main "<<a<<endl;
+    cout << " inside main " << a << endl;
 
     return 0;
 }
