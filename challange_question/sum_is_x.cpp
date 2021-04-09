@@ -2,16 +2,19 @@
 using namespace std;
 void sum_is_k(int *arr, int size, int key)
 {
-    int initail_sum = 0;
 
-    for (int i = 1; i <= size; i++)
+    for (int i = 0; i < size; i++)
     {
-        for (int j = i; j <= size; j++)
+        int initail_sum = 0;
+        for (int j = i; j < size; j++)
         {
-            // initail_sum += arr[j];
-            // if (initail_sum == key)
+            initail_sum += arr[j];
 
-            cout << j << " ";
+            cout << initail_sum << " ";
+            // if (initail_sum == key)
+            // {
+            //     cout << arr[j] << " ";
+            // }
         }
         cout << endl;
     }
