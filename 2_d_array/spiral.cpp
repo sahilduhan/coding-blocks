@@ -1,31 +1,22 @@
 #include <bits/stdc++.h>
 using namespace std;
-void print_spiral(int arr[][1000], int m, int n)
-{
-    int start_row = 0;
-    int start_coloum = 0;
-    int end_row = m - 1;
-    int end_coloum = n - 1;
-    
-}
 
 int main()
 {
-    int arr[1000][1000] = {0};
-    int m, n;
-    cout << " enter the rows and coloum " << endl;
-    cin >> m >> n;
-    for (int row = 0; row < m; row++)
+    int i, j;
+    int arr[3][3] = {{1, 2, 3}, {1, 2, 3}, {1, 2, 3}};
+    for (int i = 0; i < 3; i++)
     {
-        for (int col = 0; col < n; col++)
+        for (int j = 0; j < 3; j++)
         {
-            int var = 0;
-            arr[row][col] = var;
-            var = var + 11;
-            cout << arr[row][col] << " ";
+            cout << arr[i][j] << " ";
         }
         cout << endl;
-    }
+        //spiral
+        int row_start = 0, row_end = i - 1, coloum_start = 0, coloum_end = j - 1;
+        while (row_start <= row_end && coloum_start <= coloum_end)
+        {
+        }
 
-    return 0;
-}
+        return 0;
+    }
