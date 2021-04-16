@@ -1,10 +1,10 @@
 #include <bits/stdc++.h>
 using namespace std;
-int bubble_sort(int *arr, int size)
+void bubble_sort(int *arr, int size)
 {
     if (size == 1)
     {
-        return 0;
+        return ;
     }
     for (int i = 0; i <= size - 2; i++)
     {
