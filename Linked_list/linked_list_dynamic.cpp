@@ -13,7 +13,7 @@ public:
 };
 void print(node *head)
 {
-    node *temp = head;
+
     while (head != NULL)
     {
         cout << head->data << " ";
