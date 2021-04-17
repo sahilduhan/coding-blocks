@@ -19,12 +19,25 @@ void print(node *head)
         head = head->next;
     }
 }
-node*takeinput()
+node *takeinput()
 {
-    
+    int data;
+    cin >> data;
+    node *head = NULL;
+    while (data != -1)
+    {
+        node *new_node = new node(data);
+        if (head == NULL)
+        {
+            head = new_node;
+        }
+        cin >> data;
+    }
 }
 int main()
 {
+    // node n1(10);
+    // node *head = &n1;
 
     return 0;
 }
