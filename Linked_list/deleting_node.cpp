@@ -1,4 +1,4 @@
-#include <bits/stdc++.h>
+#include <bits\stdc++.h>
 using namespace std;
 class node
 {
@@ -42,28 +42,13 @@ void print(node *head)
         head = head->next;
     }
 }
-void insert_node(node *head, int i, int data)
+void delete_node(node *head, int i, int data)
 {
-    node *newnode = new node(data);
-    int count = 0;
-    node *temp = head;
-    while (count < i - 1)
-    {
-        temp = temp->next;
-        count++;
-    }
-    node *a = temp->next;
-    temp->next = newnode;
-    newnode->next = a;
+    node*a;
+    node*temp;
 }
 int main()
 {
-    node *head = take_input();
-    print(head);
-    int i, data;
-    cin >> i;
-    cin >> data;
-    insert_node(head, i, data);
-    print(head);
+
     return 0;
 }
