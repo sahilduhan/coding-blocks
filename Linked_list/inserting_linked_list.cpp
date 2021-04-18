@@ -31,13 +31,22 @@ node *takeinput()
         {
             head = new_node;
         }
+        else
+        {
+            node *temp = head;
+            while (temp->next != NULL)
+            {
+                temp = temp->next;
+            }
+            temp->next = new_node;
+        }
         cin >> data;
     }
+    return head;
 }
 int main()
 {
-    // node n1(10);
-    // node *head = &n1;
-
+    node *head = takeinput();
+    print(head);
     return 0;
 }
