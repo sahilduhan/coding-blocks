@@ -21,11 +21,11 @@ int main()
     isprime(num);
     if (isprime(num))
     {
-        cout << " yes " << endl;
+        cout << " yes the num is prime " << endl;
     }
     else
     {
-        cout << " no " << endl;
+        cout << " the num is not prime" << endl;
     }
 
     return 0;
