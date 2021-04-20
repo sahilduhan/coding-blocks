@@ -44,8 +44,6 @@ void print(node *head)
 }
 void delete_node(node *head, int i, int data)
 {
-    node*a;
-    node*temp;
 }
 int main()
 {
