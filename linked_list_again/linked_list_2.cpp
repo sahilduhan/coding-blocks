@@ -9,7 +9,7 @@ public:
 node *head;
 void insert(int x)
 {
-    
+    node *temp = (node *)malloc(sizeof(node));
 }
 void print()
 {
