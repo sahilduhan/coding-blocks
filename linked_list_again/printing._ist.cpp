@@ -11,12 +11,13 @@ public:
         next = NULL;
     }
 };
-int input(int x)
-{
-}
-
 int main()
 {
-
+    Node n1(10);
+    Node *head = &n1;
+    Node n2(20);
+    n1.next = &n2;
+    cout << n1.data << " " << n2.data << endl;
+    cout << head->data;
     return 0;
 }
