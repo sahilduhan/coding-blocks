@@ -14,24 +14,40 @@ public:
 node *take_input()
 {
     node *head = NULL;
+    node *tail = NULL;
     int data;
     cin >> data;
     while (data != -1)
     {
         node *new_node = new node(data);
+
         if (head == NULL)
         {
             head = new_node;
+            tail = new_node;
         }
         else
         {
+            tail->next = new_node;
+            tail = tail->next;
         }
         cin >> data;
+    }
+    return head;
+}
+void print(node *head)
+{
+    while (head != NULL)
+    {
+        cout << head->data << " ";
+        head = head->next;
     }
 }
 
 int main()
 {
+    node *head = take_input();
+    print(head);
 
     return 0;
 }
