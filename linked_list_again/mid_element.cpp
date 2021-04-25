@@ -46,18 +46,30 @@ void length(node *head)
 {
     int count = 0;
     node *temp = head;
+    int mid = 0;
 
     while (temp != NULL)
     {
         temp = temp->next;
         count++;
     }
+
     cout << endl
          << " the length is ";
     cout << count << " ";
 }
-void mid_element(node *head, int slow, int fast)
+void mid_element(node *head)
 {
+    node *temp = head;
+    node *slow = head;
+    node *fast = head;
+    while (temp != NULL)
+    {
+        slow = slow->next;
+        fast = fast->next->next;
+    }
+    cout << endl
+         << slow->data << " ";
 }
 
 int main()
@@ -65,5 +77,6 @@ int main()
     node *head = take_input();
     print_data(head);
     length(head);
+    mid_element(head);
     return 0;
 }
