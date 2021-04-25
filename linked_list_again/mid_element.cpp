@@ -60,16 +60,17 @@ void length(node *head)
 }
 void mid_element(node *head)
 {
-    node *temp = head;
-    node *slow = head;
-    node *fast = head;
-    while (temp != NULL)
+    node *slow = head, *fast = head;
+    while (!fast)
     {
         slow = slow->next;
-        fast = fast->next->next;
+        fast = fast->next;
+        if (fast->next)
+        {
+            fast = fast->next;
+        }
     }
-    cout << endl
-         << slow->data << " ";
+    cout << slow->data << " ";
 }
 
 int main()
