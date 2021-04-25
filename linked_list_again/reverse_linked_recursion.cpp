@@ -42,13 +42,27 @@ void print(node *head)
         head = head->next;
     }
 }
-void merge_sort(node *head)
+node *reverse(node *head)
 {
+    if (head == NULL || head->next == NULL)
+    {
+        return head;
+    }
+    node *small_ans = reverse(head->next);
+    node *temp = small_ans;
+    while (temp->next != NULL)
+    {
+        temp = temp->next;
+    }
+    temp->next = head;
+    temp->next = NULL;
+    return small_ans;
 }
 int manin()
 {
     node *head = take_input();
     print(head);
+    reverse(head);
 
     return 0;
 }
