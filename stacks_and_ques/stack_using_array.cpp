@@ -26,21 +26,41 @@ public:
         if (next_index == capacity)
         {
             cout << " stack is full" << endl;
+            return;
         }
-        else
-        {
-            data[next_index] = element;
-            next_index++;
-        }
+        data[next_index] = element;
+        next_index++;
     }
     int pop()
     {
         next_index--;
         return data[next_index];
     }
+    int top()
+    {
+        return data[next_index - 1];
+        if (empty())
+        {
+            cout << " stack is empty " << endl;
+        }
+        return INT_MIN;
+    }
 };
 int main()
 {
+    stack_using_array s(5);
+    s.push(10);
+    s.push(20);
+    s.push(30);
+    s.push(40);
+    s.push(50);
+    s.push(60);
+    s.size();
+    s.empty();
+    s.top();
+    s.pop();
+    s.pop();
+    s.pop();
 
     return 0;
 }
