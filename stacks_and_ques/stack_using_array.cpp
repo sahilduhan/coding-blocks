@@ -9,15 +9,15 @@ class stack_using_array
 public:
     stack_using_array(int total_size)
     {
-        data = new int(total_size);
+        data = new int[total_size];
         next_index = 0;
-        total_size = capacity;
+        capacity = total_size;
     }
     int size()
     {
         return next_index;
     }
-    int empty()
+    bool empty()
     {
         return next_index == 0;
     }
@@ -56,11 +56,11 @@ int main()
     s.push(50);
     s.push(60);
     s.size();
-    s.empty();
     s.top();
     s.pop();
     s.pop();
     s.pop();
+    s.empty();
 
     return 0;
 }
