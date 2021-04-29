@@ -9,9 +9,9 @@ class _Pair
 public:
     void setX(T x)
     {
-        this - x = x;
+        this->x = x;
     }
-    void getX()
+    int getX()
     {
         return x;
     }
@@ -19,7 +19,7 @@ public:
     {
         this->y = y;
     }
-    void getY()
+    int getY()
     {
         return y;
     }
@@ -28,7 +28,7 @@ int main()
 {
     _Pair<int> p1;
     p1.setX(10);
-    p1.getX();
+    cout << p1.getX();
     _Pair<int> p2;
 
     return 0;
