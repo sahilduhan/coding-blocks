@@ -22,7 +22,12 @@ public:
     {
         return next_index == 0;
     }
-    
+    void push(T elemnet)
+    {
+        if (next_index == capacity)
+        {
+        }
+    }
 };
 int main()
 {
