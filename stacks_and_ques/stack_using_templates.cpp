@@ -43,7 +43,7 @@ public:
         if (is_empty())
         {
             cout << " stack is empty " << endl;
-            return INT_MIN;
+            return 0;
         }
         next_index--;
         return data[next_index];
@@ -53,14 +53,18 @@ public:
         if (is_empty())
         {
             cout << " stack is empty " << endl;
-            return INT_MIN;
+            return 0;
         }
         return data[next_index - 1];
     }
 };
 int main()
 {
-    
+    Stack_using_array<int> s;
+    s.push(10);
+    s.push(20);
+    cout << s.pop() << endl;
+    cout << s.size() << " ";
 
     return 0;
 }
