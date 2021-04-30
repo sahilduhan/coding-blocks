@@ -12,7 +12,7 @@ public:
     {
         this->x = x;
     }
-    int getX()
+    T getX()
     {
         return x;
     }
@@ -20,7 +20,7 @@ public:
     {
         this->y = y;
     }
-    int getY()
+    T getY()
     {
         return y;
     }
@@ -33,7 +33,7 @@ int main()
     p4.setX(5);
     p4.setY(6);
     p2.setX(p4);
-    
+    cout << p2.getX().getX() << " " << p2.getX().getY() << " ";
 
     return 0;
 }
