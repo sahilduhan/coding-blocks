@@ -1,37 +1,50 @@
 #include <bits/stdc++.h>
 using namespace std;
+template <typename T>
 class node
 {
-    int data;
-    int next_index;
-    node(int data)
+    T data;
+    node<T> next_index;
+    node(T data)
     {
         this->data = data;
         next_index = NULL;
     }
 };
+template <typename T>
 class Stack
 {
-    node *head;
+    node<T> *head;
     int size;
 
 public:
     Stack()
     {
+        head = NULL;
+        size = 0;
     }
-    int get_size()
+    T get_size()
     {
+        return size;
     }
     bool is_empty()
     {
+        return size==0;
     }
-    void push(int element)
+
+    void push(T element)
+    {
+        node *new_node = new node(element);
+
+        if (head == null)
+        {
+
+        }
+    }
+    T pop()
     {
     }
-    int pop()
-    {
-    }
-    int top()
+    T top()
     {
     }
 };
