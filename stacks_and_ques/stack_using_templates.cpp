@@ -26,11 +26,41 @@ public:
     {
         if (next_index == capacity)
         {
+            T *new_data = new data[2 * capacity];
+            for (int i = 0; i < capacity; i++)
+            {
+                new_data[i] = data[i];
+            }
+            capacity *= 2;
+            delete data;
+            data = new_data;
         }
+        data[next_index] = elemnet;
+        next_index++;
+    }
+    T pop()
+    {
+        if (is_empty())
+        {
+            cout << " stack is empty " << endl;
+            return INT_MIN;
+        }
+        next_index--;
+        return data[next_index];
+    }
+    T top()
+    {
+        if (is_empty())
+        {
+            cout << " stack is empty " << endl;
+            return INT_MIN;
+        }
+        return data[next_index - 1];
     }
 };
 int main()
 {
+    
 
     return 0;
 }
