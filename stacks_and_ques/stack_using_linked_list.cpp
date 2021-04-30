@@ -10,7 +10,31 @@ class node
         next_index = NULL;
     }
 };
-node *head;
+class Stack
+{
+    node *head;
+    int size;
+
+public:
+    Stack()
+    {
+    }
+    int get_size()
+    {
+    }
+    bool is_empty()
+    {
+    }
+    void push(int element)
+    {
+    }
+    int pop()
+    {
+    }
+    int top()
+    {
+    }
+};
 
 int main()
 {
