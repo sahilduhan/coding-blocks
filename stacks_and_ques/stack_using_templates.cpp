@@ -11,9 +11,18 @@ public:
     Stack_using_array()
     {
         data = new T(4);
-        next_index=0;
-        capacity=4;
+        next_index = 0;
+        capacity = 4;
     }
+    int size()
+    {
+        return next_index;
+    }
+    bool is_empty()
+    {
+        return next_index == 0;
+    }
+    
 };
 int main()
 {
