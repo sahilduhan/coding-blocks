@@ -42,19 +42,22 @@ public:
     }
     T pop()
     {
+        if (head == NULL)
+        {
+            return 0;
+        }
         T ans = head->data;
         node<T> *temp = head;
         head = head->next_index;
-        delete head;
+        delete temp;
         size--;
-
         return ans;
     }
     T top()
     {
         if (head == NULL)
         {
-            cout << " stack is empty " << endl;
+            return 0;
         }
 
         return head->data;
@@ -63,6 +66,15 @@ public:
 
 int main()
 {
+    stack<int> s;
+    s.push(100);
+    s.push(101);
+    s.push(102);
+    cout << s.top() << endl;
+    s.pop();
+    s.pop();
+    cout << s.size() << endl;
+    cout << s.empty() << endl;
 
     return 0;
 }
