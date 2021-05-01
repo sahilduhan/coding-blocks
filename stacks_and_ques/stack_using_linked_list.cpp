@@ -4,7 +4,7 @@ template <typename T>
 class node
 {
     T data;
-    node<T> next_index;
+    node<T> *next_index;
     node(T data)
     {
         this->data = data;
@@ -29,23 +29,28 @@ public:
     }
     bool is_empty()
     {
-        return size==0;
+        return size == 0;
     }
 
     void push(T element)
     {
+        node *temp;
         node *new_node = new node(element);
 
-        if (head == null)
+        if (temp == NULL)
         {
-
+            head = NULL;
         }
+        new_node->next_index = head;
+
+        size++;
     }
     T pop()
     {
     }
     T top()
     {
+        return
     }
 };
 
