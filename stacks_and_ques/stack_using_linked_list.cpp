@@ -34,24 +34,18 @@ public:
 
     void push(T element)
     {
-        node *temp = head;
-        node *new_node = new node(element);
 
-        if (temp == NULL)
-        {
-            head = NULL;
-        }
-        new_node->next_index = temp;
-        temp = new_node;
+        node<T> *new_node = new node<T>(element);
+        new_node->next_index = head;
+        head = new_node;
         size++;
     }
     T pop()
     {
-        if (is_empty())
-        {
-            cout << " stack is empty " << endl;
-        }
         T ans = head->data;
+        node<T> *temp = head;
+        head = head->next_index;
+        delete head;
         size--;
 
         return ans;
@@ -69,7 +63,6 @@ public:
 
 int main()
 {
-    
 
     return 0;
 }
