@@ -45,14 +45,27 @@ public:
     {
         if (is_empty())
         {
-            cout << " stack is empty" << endl;
+            cout << " queue is empty" << endl;
             return 0;
         }
         return data[first_index];
     }
     T dequeue()
     {
-        
+        if (is_empty())
+        {
+            cout << "queue is empty" << endl;
+            return 0;
+        }
+        T ans = data[first_index];
+        first_index = (first_index + 1) % capacity;
+        size--;
+        return ans;
+        if (size == 0)
+        {
+            first_index = -1;
+            next_index = 0;
+        }
     }
 };
 int main()
