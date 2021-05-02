@@ -41,6 +41,19 @@ public:
         }
         size++;
     }
+    T front()
+    {
+        if (is_empty())
+        {
+            cout << " stack is empty" << endl;
+            return 0;
+        }
+        return data[first_index];
+    }
+    T dequeue()
+    {
+        
+    }
 };
 int main()
 {
