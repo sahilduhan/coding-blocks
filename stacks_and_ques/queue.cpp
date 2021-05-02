@@ -7,6 +7,7 @@ class Queue_uing_array
     int next_index;
     int first_index;
     int size;
+    int capacity;
 
 public:
     Queue_uing_array(int s)
@@ -15,6 +16,30 @@ public:
         next_index = 0;
         first_index = -1;
         size = 0;
+        capacity = s;
+    }
+    int size()
+    {
+        return size;
+    }
+    bool is_empty()
+    {
+        return size == 0;
+    }
+    void enqueue(T element)
+    {
+        if (size == capacity)
+        {
+            cout << " capacity is full " << endl;
+            return;
+        }
+        data[next_index] = element;
+        next_index = (next_index + 1) % capacity;
+        if (first_index == -1)
+        {
+            first_index = 0;
+        }
+        size++;
     }
 };
 int main()
