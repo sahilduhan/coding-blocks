@@ -20,7 +20,7 @@ class queue_using_ll
     int size;
 
 public:
-    queue_using_ll
+    queue_using_ll()
     {
         head = NULL;
         tail = NULL;
@@ -43,6 +43,26 @@ public:
             tail = new_node;
             size++;
         }
+    }
+    T front()
+    {
+        if (is_empty())
+        {
+            return 0;
+        }
+        return head->data;
+    }
+    T dequeue()
+    {
+        if (is_empty())
+        {
+            return 0;
+        }
+        T ans = head->data;
+        node<T> *temp = head;
+        delete temp;
+        size--;
+        return ans;
     }
 };
 int main()
