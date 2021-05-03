@@ -13,4 +13,4 @@ int main()
     cout << s1.size() << endl;
 
     return 0;
-}
+}   
