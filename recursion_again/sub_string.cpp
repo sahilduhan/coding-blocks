@@ -11,7 +11,7 @@ int substr(string input, string output[])
     int small_output = substr(small_string, output);
     for (int i = 0; i < small_output; i++)
     {
-        output[i + 1] = input[0] + output[i];
+        output[i + small_output] = input[0] + output[i];
     }
     return 2 * small_output;
 }
@@ -21,7 +21,8 @@ int main()
     cout << " enter the value of the string " << endl;
     getline(cin, input);
     int length = input.length();
-    string *output = new string[pow(2, input.length())];
+    int output_length = pow(2, length);
+    string *output = new string[output_length];
     int count = substr(input, output);
     for (int i = 0; i < count; i++)
     {
