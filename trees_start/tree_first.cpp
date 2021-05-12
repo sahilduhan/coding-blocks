@@ -11,6 +11,22 @@ public:
         this->data = data;
     }
 };
+tree_node<int> *take_input()
+{
+    int root_data;
+    cout << "enter the data" << endl;
+    cin >> root_data;
+    tree_node<int> *root = new tree_node<int>(root_data);
+    int num_children;
+    cout << " enter the children" << endl;
+    cin >> num_children;
+    for (int i = 0; i < num_children; i++)
+    {
+        tree_node<int> *child = take_input();
+        root->children.push_back(child);
+    }
+    return root;
+}
 void print_tree(tree_node<int> *root)
 {
     if (root == NULL)
@@ -31,11 +47,14 @@ void print_tree(tree_node<int> *root)
 
 int main()
 {
-    tree_node<int> *root = new tree_node<int>(1);
-    tree_node<int> *node_1 = new tree_node<int>(2);
-    tree_node<int> *node_2 = new tree_node<int>(3);
-    root->children.push_back(node_1);
-    root->children.push_back(node_2);
+    // tree_node<int> *root = new tree_node<int>(1);
+    // tree_node<int> *node_1 = new tree_node<int>(2);
+    // tree_node<int> *node_2 = new tree_node<int>(3);
+    // root->children.push_back(node_1);
+    // root->children.push_back(node_2);
+    tree_node<int> *root = take_input();
     print_tree(root);
+    
+
     return 0;
 }
