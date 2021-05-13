@@ -17,6 +17,20 @@ tree_node<int> *take_input_better()
     cout << "enter the data" << endl;
     cin >> root_data;
     tree_node<int> *root = new tree_node<int>(root_data);
+    queue<tree_node<int> *> pending_nodes;
+    pending_nodes.push(root);
+    while (!pending_nodes.size() != 0)
+    {
+        tree_node<int> *front = pending_nodes.front();
+        pending_nodes.pop();
+        cout << " enter the children of the node " << front->data << endl;
+        int num_child;
+        cin >> num_child;
+        for (int i = 0; i < num_child; i++)
+        {
+            
+        }
+    }
 }
 void print_tree(tree_node<int> *root)
 {
