@@ -28,9 +28,15 @@ tree_node<int> *take_input_better()
         cin >> num_child;
         for (int i = 0; i < num_child; i++)
         {
-            
+            int child_data;
+            cout << " enter the " << i << " data " << front->data << endl;
+            cin >> child_data;
+            tree_node<int> *children = new tree_node<int>(child_data);
+            front->children.push_back(children);
+            pending_nodes.push(children);
         }
     }
+    return root;
 }
 void print_tree(tree_node<int> *root)
 {
@@ -52,5 +58,7 @@ void print_tree(tree_node<int> *root)
 
 int main()
 {
+    tree_node<int> *root = take_input_better();
+    print_tree(root);
     return 0;
 }
