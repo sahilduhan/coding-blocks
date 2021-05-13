@@ -64,6 +64,17 @@ int num_node(tree_node<int> *root)
     }
     return ans;
 }
+int max_height(tree_node<int> *root)
+{
+    int ans = 1;
+    int max_he = 0;
+    for (int i = 0; i < root->children.size(); i++)
+    {
+        ans += max_height(root->children[i]);
+        max_he = max(max_he, ans);
+    }
+    return max_he;
+}
 int main()
 {
     tree_node<int> *root = take_input_better();
