@@ -19,7 +19,7 @@ tree_node<int> *take_input_better()
     tree_node<int> *root = new tree_node<int>(root_data);
     queue<tree_node<int> *> pending_nodes;
     pending_nodes.push(root);
-    while (!pending_nodes.size() != 0)
+    while (pending_nodes.size() != 0)
     {
         tree_node<int> *front = pending_nodes.front();
         pending_nodes.pop();
