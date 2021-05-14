@@ -1,27 +1,24 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class TreeNode
+class tree_node
 {
 public:
-    int value;
-    vector<TreeNode *> children;
-  
-
-    void print()
+    int data;
+    vector<tree_node *> children;
+    tree_node *new_node(int data)
     {
-        cout << "value of node is - " << value << endl;
-        if (!children.size())
-            cout << "No children " << endl;
-        for (auto a : children)
-            cout << a->value << " ";
-        cout << endl;
+        tree_node *new_node = new tree_node;
+        new_node->data = data;
+        return new_node;
     }
 };
+void print(tree_node *root)
+{
+    
+}
 
 int main()
 {
-    TreeNode sachin(3);
-    sachin.print();
     return 0;
 }
