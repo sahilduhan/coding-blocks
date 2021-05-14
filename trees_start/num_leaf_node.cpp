@@ -38,6 +38,18 @@ tree_node<int> *take_input_better()
     }
     return root;
 }
+void print_num_lead(tree_node<int> *root)
+{
+    int ans = 0;
+    if (root == NULL)
+    {
+        return;
+    }
+    for (int i = 0; i < root->children.size(); i++)
+    {
+        
+    }
+}
 void print_tree(tree_node<int> *root)
 {
     if (root == NULL)
