@@ -55,7 +55,6 @@ void print_tree(tree_node<int> *root)
         print_tree(root->children[i]);
     }
 }
-
 int main()
 {
     tree_node<int> *root = take_input_better();
