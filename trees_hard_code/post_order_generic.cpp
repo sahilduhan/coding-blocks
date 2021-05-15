@@ -10,22 +10,9 @@ public:
         this->data = data;
     }
 };
-int print_leaf(tree_node *root)
+void post_order(tree_node *root)
 {
-    if (root == NULL)
-    {
-        return 0;
-    }
-    int max = 0;
-    if (root->children.size() == 0)
-    {
-        return 1;
-    }
-    for (int i = 0; i < root->children.size(); i++)
-    {
-        max += print_leaf(root->children[i]);
-    }
-    return max;
+   
 }
 int main()
 {
@@ -51,7 +38,7 @@ int main()
     root->children[3]->children.push_back(node_9);
     root->children[3]->children.push_back(node_10);
     root->children[3]->children.push_back(node_11);
-    cout << print_leaf(root);
+    post_order(root);
 
     return 0;
 }
