@@ -10,20 +10,21 @@ public:
         this->data = data;
     }
 };
-int height(tree_node *root)
+int print_leaf(tree_node *root)
 {
-    int maximum = 0;
-    int max_height = 0;
+    int max = 0;
+    if (root->children.size() == 0)
+    {
+        return 1;
+    }
     for (int i = 0; i < root->children.size(); i++)
     {
-        max_height += height(root->children[i]);
-        maximum = max(max_height, maximum);
+        max += print_leaf(root->children[i]);
     }
-    return maximum;
-} // doubt hai isme ki ye sahi hai ya nahi
+    return max;
+}
 int main()
 {
-
     tree_node *root = new tree_node(10);
     tree_node *node_1 = new tree_node(1);
     tree_node *node_2 = new tree_node(2);
@@ -46,6 +47,7 @@ int main()
     root->children[3]->children.push_back(node_9);
     root->children[3]->children.push_back(node_10);
     root->children[3]->children.push_back(node_11);
-    cout << height(root);
+    cout << print_leaf(root);
+
     return 0;
 }
