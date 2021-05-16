@@ -12,15 +12,8 @@ public:
 };
 int height(tree_node *root)
 {
-    int maximum = 0;
-    int max_height = 0;
-    for (int i = 0; i < root->children.size(); i++)
-    {
-        max_height += height(root->children[i]);
-        maximum = max(max_height, maximum);
-    }
-    return maximum;
-} // doubt hai isme ki ye sahi hai ya nahi
+   
+} 
 int main()
 {
 

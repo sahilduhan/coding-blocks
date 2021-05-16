@@ -12,7 +12,11 @@ public:
 };
 void post_order(tree_node *root)
 {
-   
+    for (int i = 0; i < root->children.size(); i++)
+    {
+        post_order(root->children[i]);
+    }
+    cout << root->data << " ";
 }
 int main()
 {
