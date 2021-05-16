@@ -12,14 +12,14 @@ public:
 };
 int count_nodes(tree_node *root)
 {
-    int ans = 1;
+    int count = 1;
     for (int i = 0; i < root->children.size(); i++)
     {
-        ans += count_nodes(root->children[i]);
+        count += count_nodes(root->children[i]);
     }
-    return ans;
+    return count;
 }
-int manin()
+int main()
 {
 
     tree_node *root = new tree_node(10);
@@ -44,6 +44,6 @@ int manin()
     root->children[3]->children.push_back(node_9);
     root->children[3]->children.push_back(node_10);
     root->children[3]->children.push_back(node_11);
-    count_nodes(root);
+    cout << count_nodes(root);
     return 0;
 }
