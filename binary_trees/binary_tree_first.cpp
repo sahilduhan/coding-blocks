@@ -20,6 +20,8 @@ void print_data(Binary_tree_node *root)
         return;
     }
     cout << root->data << " ";
+    print_data(root->left);
+    print_data(root->right);
 }
 int main()
 {
