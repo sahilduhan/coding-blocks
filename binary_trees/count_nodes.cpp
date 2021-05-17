@@ -54,6 +54,6 @@ int main()
     root->right->right->left = new binary_tree_node(11);
     root->right->right->right = new binary_tree_node(12);
     print_tree_data(root);
-    count_tree_node(root);
+    cout << count_tree_node(root);
     return 0;
 }
