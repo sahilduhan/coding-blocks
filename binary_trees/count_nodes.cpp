@@ -24,18 +24,36 @@ void print_tree_data(binary_tree_node *root)
 }
 int count_tree_node(binary_tree_node *root)
 {
-    int ans = 0;
+    int ans_1 = 0;
+    int ans_2 = 0;
     if (root == NULL)
     {
         return 0;
     }
-    ans += count_tree_node(root->right);
-    ans += count_tree_node(root->left);
-    return ans;
+    return 1 + count_tree_node(root->left) + count_tree_node(root->right);
 }
 int main()
 {
-    
 
+    binary_tree_node *root = new binary_tree_node(10);
+
+    //left side of the tree
+
+    root->left = new binary_tree_node(1);
+    root->right = new binary_tree_node(2);
+    root->left->left = new binary_tree_node(3);
+    root->left->right = new binary_tree_node(4);
+    root->left->left->right = new binary_tree_node(7);
+    root->left->left->right->right = new binary_tree_node(13);
+    root->left->right->left = new binary_tree_node(8);
+
+    //right side of the tree
+
+    root->right->left = new binary_tree_node(5);
+    root->right->right = new binary_tree_node(6);
+    root->right->right->left = new binary_tree_node(11);
+    root->right->right->right = new binary_tree_node(12);
+    print_tree_data(root);
+    count_tree_node(root);
     return 0;
 }
