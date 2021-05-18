@@ -13,8 +13,9 @@ public:
         left = NULL;
     }
 };
+
 int main()
 {
-
+       
     return 0;
 }
