@@ -26,10 +26,10 @@ int daimeter_binary_tree(binary_tree_node *root)
     {
         return 0;
     }
-    int option_1 = height_tree(root->left) + height_tree(root->right);
+    int option_1 = height_tree(root->left) + daimeter_binary_tree(root->right);
     int option_2 = daimeter_binary_tree(root->left);
     int option_3 = daimeter_binary_tree(root->right);
-    return max(option_1, max(option_2, option_3));
+    return 1 + max(option_1, max(option_2, option_3));
 }
 int main()
 {
