@@ -13,14 +13,32 @@ public:
         right = NULL;
     }
 };
-void pirnt_binary_search_tree(binary_search_tree_node *root)
+int maximum(binary_search_tree_node *root)
 {
-    if(root==NULL)
+    if (root == NULL)
     {
-        return;
+        return INT_MIN;
     }
-    
-
+    return max(root->data, max(maximum(root->right), maximum(root->left)));
+}
+int minimum(binary_search_tree_node *root)
+{
+    if (root == NULL)
+    {
+        return INT_MAX;
+    }
+    return min(root->data, min(minimum(root->left), minimum(root->right)));
+}
+bool is_Bst(binary_search_tree_node *root)
+{
+    if (root == NULL)
+    {
+        return true;
+    }
+    int left_max = maximum(root->left);
+    int right_min = minimum(root->right);
+    bool output = (root->data > left_max) && (root->data <= right_min) && is_Bst(root->left) && is_Bst(root->right);
+    return output;
 }
 int main()
 {
@@ -41,6 +59,9 @@ int main()
     root->right->right = new binary_search_tree_node(70);
     root->right->left->left = new binary_search_tree_node(90);
     root->right->left->right = new binary_search_tree_node(110);
+    cout << minimum(root) << endl;
+    cout << maximum(root) << endl;
+    cout << is_Bst(root) << endl;
 
     return 0;
 }
