@@ -13,13 +13,21 @@ public:
         right = NULL;
     }
 };
+void pirnt_binary_search_tree(binary_search_tree_node *root)
+{
+    if(root==NULL)
+    {
+        return;
+    }
+    
 
+}
 int main()
 {
 
     binary_search_tree_node *root = new binary_search_tree_node(40);
     //left side of the tree
-    
+
     root->left = new binary_search_tree_node(20);
     root->left->left = new binary_search_tree_node(10);
     root->left->right = new binary_search_tree_node(30);
