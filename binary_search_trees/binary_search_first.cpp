@@ -35,9 +35,7 @@ bool is_Bst(binary_search_tree_node *root)
     {
         return true;
     }
-    int left_max = maximum(root->left);
-    int right_min = minimum(root->right);
-    bool output = (root->data > left_max) && (root->data <= right_min) && is_Bst(root->left) && is_Bst(root->right);
+    bool output = (root->data > maximum(root->left)) && (root->data <= minimum(root->right)) && is_Bst(root->left) && is_Bst(root->right);
     return output;
 }
 int main()
@@ -57,7 +55,7 @@ int main()
     root->right = new binary_search_tree_node(60);
     root->right->left = new binary_search_tree_node(50);
     root->right->right = new binary_search_tree_node(70);
-    root->right->left->left = new binary_search_tree_node(90);
+    root->right->right->right = new binary_search_tree_node(80);
     root->right->left->right = new binary_search_tree_node(110);
     cout << minimum(root) << endl;
     cout << maximum(root) << endl;
