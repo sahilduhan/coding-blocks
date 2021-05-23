@@ -42,5 +42,6 @@ int main()
     int size = sizeof(arr) / sizeof(arr[0]);
     int start = 0;
     int end = size - 1;
+    
     return 0;
 }
