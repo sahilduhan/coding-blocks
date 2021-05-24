@@ -12,6 +12,7 @@ public:
         left=right=NULL;
     }
 };
+
 int main()
 {
     return 0;
