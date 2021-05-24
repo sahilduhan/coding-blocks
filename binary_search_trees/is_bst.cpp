@@ -58,7 +58,7 @@ int main()
     root->right->left = new binary_search_tree_node(50);
     root->right->right = new binary_search_tree_node(70);
     root->right->right->right = new binary_search_tree_node(80);
-    root->right->left->right = new binary_search_tree_node(110);
+    // root->right->left->right = new binary_search_tree_node(110);
     cout << minimum(root) << endl;
     cout << maximum(root) << endl;
     cout << is_Bst(root) << endl;
