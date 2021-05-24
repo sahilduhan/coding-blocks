@@ -30,21 +30,21 @@ bool is_bst_better(binary_search_tree_node *root, int min = INT_MIN, int max = I
 int main()
 {
 
-    binary_search_tree_node *root = new binary_search_tree_node(4);
+    binary_search_tree_node *root = new binary_search_tree_node(40);
     //left side of the tree
 
-    root->left = new binary_search_tree_node(2);
-    root->left->left = new binary_search_tree_node(1);
-    root->left->right = new binary_search_tree_node(3);
-    // root->left->right->left = new binary_search_tree_node(25);
-    // root->left->right->right = new binary_search_tree_node(35);
+    root->left = new binary_search_tree_node(20);
+    root->left->left = new binary_search_tree_node(10);
+    root->left->right = new binary_search_tree_node(30);
+    root->left->right->left = new binary_search_tree_node(25);
+    root->left->right->right = new binary_search_tree_node(35);
 
     // right side of the tree
 
-    root->right = new binary_search_tree_node(6);
-    root->right->left = new binary_search_tree_node(5);
-    root->right->right = new binary_search_tree_node(7);
-    // root->right->right->right = new binary_search_tree_node(80);
+    root->right = new binary_search_tree_node(60);
+    root->right->left = new binary_search_tree_node(50);
+    root->right->right = new binary_search_tree_node(70);
+    root->right->right->right = new binary_search_tree_node(80);
     // root->right->left->right = new binary_search_tree_node(110);
 
     cout << is_bst_better(root) << endl;
