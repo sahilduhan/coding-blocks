@@ -15,12 +15,12 @@ public:
 };
 binary_search_tree_node *tree_from_array(int *arr, int start, int end)
 {
+    int middle = (start + end) / 2;
+    binary_search_tree_node *root = new binary_search_tree_node(arr[middle]);
     if (start > end)
     {
         return NULL;
     }
-    int middle = (start + end) / 2;
-    binary_search_tree_node *root = new binary_search_tree_node(arr[middle]);
     root->left = tree_from_array(arr, start, middle - 1);
     root->right = tree_from_array(arr, middle + 1, end);
     return root;
@@ -42,6 +42,7 @@ int main()
     int size = sizeof(arr) / sizeof(arr[0]);
     int start = 0;
     int end = size - 1;
-    
+    tree_from_array(arr, start, end);
+    pre_order(root);
     return 0;
 }
