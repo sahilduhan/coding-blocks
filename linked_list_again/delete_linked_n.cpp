@@ -42,7 +42,7 @@ void print(node *head)
         head = head->next;
     }
 }
-void insert_at_n(node *head, int adress)
+void delete_at_n(node *head, int adress)
 {
     int count = 0;
     node *temp = head;
@@ -60,7 +60,7 @@ int main()
 {
     node *head = insert_linked();
     print(head);
-    insert_at_n(head, 3);
+    delete_at_n(head, 3);
     print(head);
 
     return 0;
