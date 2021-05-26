@@ -13,22 +13,38 @@ public:
 };
 void print(linked_list_node *head)
 {
-    while (head != NULL)
-
+    if (head == NULL)
     {
-        cout << head->data << " ";
-        head = head->next;
+        return;
     }
+    cout << head->data << " ";
+    print(head->next);
 }
-int length(linked_list_node *head)
+// bool is_found(linked_list_node *head, int number)
+// {
+//     linked_list_node *temp = head;
+//     int count = 0;
+//     while (temp->next != NULL)
+//     {
+//         temp = temp->next;
+//         if (temp->data == number)
+//         {
+//             return true;
+//         }
+//     }
+//     return false;
+// }
+void is_found_at_n(linked_list_node *head, int num)
 {
-    int count = 0;
-    while (head != NULL)
+    if (head == NULL)
     {
-        head = head->next;
-        count++;
+        return;
     }
-    return count;
+    if (head->data == num)
+    {
+        cout << " found " << endl;
+    }
+    is_found_at_n(head = head->next, num);
 }
 int main()
 {
@@ -46,8 +62,6 @@ int main()
     fifth->next = sixth;
     sixth->next = NULL;
     print(head);
-    cout << endl
-         << "length of list:" << length(head);
-
+    is_found_at_n(head, 100);
     return 0;
 }
