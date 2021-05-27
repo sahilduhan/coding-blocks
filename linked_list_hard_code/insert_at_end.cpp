@@ -27,13 +27,13 @@ void insert_at_end(linked_list_node *head, int data)
     linked_list_node *temp = head;
     while (temp->next != NULL)
     {
+        temp = temp->next;
         if (temp->next == NULL)
         {
             linked_list_node *a = new_node;
             temp->next = a;
             a->next = NULL;
         }
-        temp = temp->next;
     }
 }
 int main()
