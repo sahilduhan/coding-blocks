@@ -20,20 +20,20 @@ void print(linked_list_node *head)
     cout << head->data << " ";
     print(head->next);
 }
-// bool is_found(linked_list_node *head, int number)
-// {
-//     linked_list_node *temp = head;
-//     int count = 0;
-//     while (temp->next != NULL)
-//     {
-//         temp = temp->next;
-//         if (temp->data == number)
-//         {
-//             return true;
-//         }
-//     }
-//     return false;
-// }
+bool is_found(linked_list_node *head, int number)
+{
+    linked_list_node *temp = head;
+    int count = 0;
+    while (temp != NULL)
+    {
+        if (temp->data == number)
+        {
+            return true;
+        }
+        temp = temp->next;
+    }
+    return false;
+}
 void is_found_at_n(linked_list_node *head, int num)
 {
     if (head == NULL)
@@ -63,5 +63,7 @@ int main()
     sixth->next = NULL;
     print(head);
     is_found_at_n(head, 100);
+    cout << is_found(head, 100);
+    // isfound(head, 10);
     return 0;
 }
