@@ -30,8 +30,8 @@ void insert_at_end(linked_list_node *head, int data)
         if (temp->next == NULL)
         {
             linked_list_node *a = new_node;
-            temp->next = new_node;
-            new_node->next = NULL;
+            temp->next = a;
+            a->next = NULL;
         }
         temp = temp->next;
     }
