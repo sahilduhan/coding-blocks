@@ -16,5 +16,24 @@ int main()
     //acess an element corrosponding to any element of
 
     cout << our_map["cde"] << endl;
+
+    //size of a map
+
+    cout << "size: " << our_map.size() << endl;
+
+    //is present function is not availble then we have to check the count value
+    // of the element inserted in the map
+
+    if (our_map.count("cde") > 0)
+    {
+        cout << "present in the map " << endl;
+    }
+    our_map.erase("cde");
+
+    if (our_map.count("ce") > 0)
+    {
+        cout << "present in the map " << endl;
+    }
+
     return 0;
 }
