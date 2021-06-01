@@ -22,6 +22,14 @@ void print_tree(binary_tree_node *root)
     print_tree(root->left);
     print_tree(root->right);
 }
+int height_tree(binary_tree_node *root)
+{
+    if (root == NULL)
+    {
+        return 0;
+    }
+    return 1 + max(height_tree(root->left), height_tree(root->right));
+}
 int main()
 {
     binary_tree_node *root = new binary_tree_node(10);
@@ -43,5 +51,6 @@ int main()
     root->right->right->left = new binary_tree_node(11);
     root->right->right->right = new binary_tree_node(12);
     // print_tree(root);
+    cout << height_tree(root);
     return 0;
 }
