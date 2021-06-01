@@ -13,7 +13,7 @@ int main()
     while (it != our_map.end())
     {
         cout << "value " << it->first << "\t"
-             << " key " << it->second;
+             << " key " << it->second; 
         it++;
     }
     vector<int> sahil;
