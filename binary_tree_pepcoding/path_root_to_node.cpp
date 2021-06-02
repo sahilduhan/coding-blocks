@@ -12,24 +12,36 @@ public:
         left = right = NULL;
     }
 };
-
-void level_order_traversel(binary_tree_node *root)
+bool is_found(binary_tree_node *root, int data)
 {
-    queue<binary_tree_node *> main_queue;
-    main_queue.push(root);
-    while (main_queue.size() > 0)
+    vector<binary_tree_node *> path;
+    if (root == NULL)
     {
-        auto temp = main_queue.front();
-        cout << temp->data << " ";
-        if (temp->left)
-            main_queue.push(temp->left);
-        if (temp->right)
-            main_queue.push(temp->right);
-        main_queue.pop();
-    }
-    cout << endl;
-}
 
+        return false;
+    }
+    if (root->data == data)
+    {
+        return true;
+    }
+    bool left = is_found(root->left, data);
+    {
+        if (left)
+        {
+            path.push_back(root->left);
+            return true;
+        }
+    }
+    bool right = is_found(root->right, data);
+    {
+        if (right)
+        {
+            path.push_back(root->left);
+            return true;
+        }
+    }
+    return false;
+}
 int main()
 {
 
@@ -51,7 +63,6 @@ int main()
     root->right->right = new binary_tree_node(6);
     root->right->right->left = new binary_tree_node(11);
     root->right->right->right = new binary_tree_node(12);
-    level_order_traversel(root);
-
+    cout << is_found(root, 13);
     return 0;
 }
