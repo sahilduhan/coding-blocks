@@ -15,13 +15,22 @@ public:
 void level_order_traversel(binary_tree_node *root)
 {
     cout << root->data << " ";
-    if (root->left != NULL)
+    queue<int> main_queue;
+    main_queue.push(root->data);
+    while (main_queue.size() > 0)
     {
-        level_order_traversel(root->left);
-    }
-    if(root->right != NULL)
-    {
-        level_order_traversel(root->right);
+        int count = main_queue.size();
+        for (int i = 0; i < count; i++)
+        {
+            if (root->left != NULL)
+            {
+                // main_queue.push(root->left);
+            }
+            if (root->right != NULL)
+            {
+                // main_queue.push(root->right);
+            }
+        }
     }
 }
 int main()
