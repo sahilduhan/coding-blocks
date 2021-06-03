@@ -12,6 +12,10 @@ public:
         left = right = NULL;
     }
 };
+void print_k_node(binary_tree_node *root, int data)
+{
+    
+}
 int main()
 {
 
