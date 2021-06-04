@@ -12,16 +12,17 @@ public:
         left = right = NULL;
     }
 };
-// binary_tree_node *left_cloned_tree(binary_tree_node *root)
-// {
-//     if (root == NULL)
-//     {
-//         return 0;
-//     }
+binary_tree_node left_cloned_tree(binary_tree_node *root)
+{
+    binary_tree_node left_clone = left_cloned_tree(root->left);
+    binary_tree_node right_clone = left_cloned_tree(root->right);
 
-//     binary_tree_node *left_clone = left_cloned_tree(root->left);
-//     binary_tree_node *right_clone = left_cloned_tree(root->right);
-// }
+    binary_tree_node *new_node = new binary_tree_node(root->data);
+    root->left = new_node;
+    root->right = NULL;
+    return 0;
+}
+
 void print_tree(binary_tree_node *root)
 {
     if (root == NULL)
