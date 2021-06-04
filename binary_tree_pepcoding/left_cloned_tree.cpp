@@ -12,10 +12,10 @@ public:
         left = right = NULL;
     }
 };
-binary_tree_node left_cloned_tree(binary_tree_node *root)
+binary_tree_node *left_cloned_tree(binary_tree_node *root)
 {
-    binary_tree_node left_clone = left_cloned_tree(root->left);
-    binary_tree_node right_clone = left_cloned_tree(root->right);
+    binary_tree_node *left_clone = left_cloned_tree(root->left);
+    binary_tree_node *right_clone = left_cloned_tree(root->right);
 
     binary_tree_node *new_node = new binary_tree_node(root->data);
     root->left = new_node;
@@ -53,7 +53,7 @@ int main()
     root->right->right = new binary_tree_node(6);
     root->right->right->left = new binary_tree_node(11);
     root->right->right->right = new binary_tree_node(12);
-    // left_cloned_tree(root);
+    left_cloned_tree(root);
     print_tree(root);
     return 0;
 }
