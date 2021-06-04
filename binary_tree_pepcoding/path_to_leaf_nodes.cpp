@@ -22,8 +22,8 @@ void leaf_node(binary_tree_node *root)
     {
         cout << root->data << " ";
     }
-    return leaf_node(root->left);
-    return leaf_node(root->right);
+    leaf_node(root->left);
+    leaf_node(root->right);
 }
 int main()
 {
