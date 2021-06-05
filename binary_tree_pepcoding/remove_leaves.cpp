@@ -12,22 +12,6 @@ public:
         left = right = NULL;
     }
 };
-binary_tree_node *left_cloned_tree(binary_tree_node *root)
-{
-    if (root == NULL)
-    {
-        return NULL;
-    }
-    binary_tree_node *left_cloned = left_cloned_tree(root->left);
-    binary_tree_node *right_cloned = left_cloned_tree(root->right);
-    binary_tree_node *new_node = new binary_tree_node(root->data);
-    root->left = new_node;
-    new_node->left = left_cloned;
-    new_node->right = NULL;
-    root->right = right_cloned;
-    return root;
-}
-
 void print_tree(binary_tree_node *root)
 {
     if (root == NULL)
@@ -38,8 +22,23 @@ void print_tree(binary_tree_node *root)
     print_tree(root->left);
     print_tree(root->right);
 }
+binary_tree_node *delete_leaf(binary_tree_node *root)
+{
+    if (root == NULL)
+    {
+        return NULL;
+    }
+    if (root->left == NULL && root->right == NULL)
+    {
+        return NULL;
+    }
+    binary_tree_node *left_clear = delete_leaf(root->left);
+    binary_tree_node *right_clear = delete_leaf(root->right);
+    return root;
+}
 int main()
 {
+
     binary_tree_node *root = new binary_tree_node(10);
 
     //left side of the tree
@@ -58,7 +57,8 @@ int main()
     root->right->right = new binary_tree_node(6);
     root->right->right->left = new binary_tree_node(11);
     root->right->right->right = new binary_tree_node(12);
-    left_cloned_tree(root);
+    delete_leaf(root);
     print_tree(root);
+
     return 0;
 }
