@@ -36,7 +36,7 @@ bool is_bst(binary_search_tree_node *root)
     }
     int left_max = maximum(root->left);
     int right_min = minimum(root->right);
-    bool output = (root->data > maximum(root->left)) && (root->data < minimum(root->right)) && is_bst(root->left) && is_bst(root->right);
+    bool output = (root->data > maximum(root->left)) && (root->data <= minimum(root->right)) && is_bst(root->left) && is_bst(root->right);
     return output;
 }
 int main()
