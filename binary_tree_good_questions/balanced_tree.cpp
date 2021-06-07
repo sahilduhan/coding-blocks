@@ -50,7 +50,7 @@ int main()
     root->right->right = new binary_tree_node(6);
     root->right->right->left = new binary_tree_node(11);
     root->right->right->right = new binary_tree_node(12);
-    cout << is_balanced(root);
+    cout << is_balanced(root) << endl;
     cout << balanced;
     return 0;
 }
