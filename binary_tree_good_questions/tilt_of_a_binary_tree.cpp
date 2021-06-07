@@ -12,6 +12,22 @@ public:
         left = right = NULL;
     }
 };
+int tilt = 0;
+int tilit_tree(binary_tree_node *root)
+{
+    if (root == NULL)
+    {
+        return 0;
+    }
+    int left_sum = tilit_tree(root->left);
+    int right_sum = tilit_tree(root->right);
+
+    int local = abs(left_sum - right_sum);
+    tilt += local;
+
+    int total_sum = left_sum + right_sum + root->data;
+    return total_sum;
+}
 int main()
 {
 
@@ -33,6 +49,7 @@ int main()
     root->right->right = new binary_tree_node(6);
     root->right->right->left = new binary_tree_node(11);
     root->right->right->right = new binary_tree_node(12);
+    cout << tilit_tree(root);
 
     return 0;
 }
