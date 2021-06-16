@@ -8,5 +8,7 @@ int main()
     cout << j << endl;
     j++;
     cout << j << endl;
+    int k = j;
+    cout << k << endl;
     return 0;
 }
