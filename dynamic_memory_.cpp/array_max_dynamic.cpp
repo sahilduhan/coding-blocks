@@ -20,6 +20,6 @@ int main()
         }
     }
     cout << " the maximum is " << max << endl;
-
+    delete[] arr;
     return 0;
 }
