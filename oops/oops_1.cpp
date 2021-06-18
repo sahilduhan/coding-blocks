@@ -2,12 +2,12 @@
 using namespace std;
 class Student
 {
-    int data;
+public:
     int age;
     int roll_num;
 };
 int main()
-{
+{ 
 
     return 0;
 }
