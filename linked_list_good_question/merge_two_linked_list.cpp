@@ -11,10 +11,10 @@ public:
         next = NULL;
     }
 };
-Node *merge(Node *head_1, Node *head_2)
+Node *sortedMerge(Node *head1, Node *head2)
 {
-    Node *temp_1 = head_1;
-    Node *temp_2 = head_2;
+    Node *temp_1 = head1;
+    Node *temp_2 = head2;
     Node *new_head = new Node(-1);
     while (temp_1 && temp_2)
     {
@@ -22,18 +22,34 @@ Node *merge(Node *head_1, Node *head_2)
         if (temp_1->data <= temp_2->data)
         {
             new_node->data = temp_1->data;
+            new_node->next = NULL;
+            new_head->next = new_node;
             temp_1 = temp_1->next;
         }
         else
         {
             new_node->data = temp_2->data;
+            new_head->next = new_node;
             temp_2 = temp_2->next;
         }
     }
     while (temp_1)
     {
-        Node *new_ndoe = new Node(-1);
-        
+        Node *new_node = new Node(-1);
+
+        new_node->data = temp_1->data;
+        new_node->next = NULL;
+        new_head->next = new_node;
+        temp_1 = temp_1->next;
+    }
+    while (temp_2)
+    {
+
+        Node *new_node = new Node(-1);
+        new_node->data = temp_2->data;
+        new_node->next = NULL;
+        new_head->next = new_node;
+        temp_2 = temp_2->next;
     }
     return new_head->next;
 }
@@ -75,7 +91,7 @@ int main()
     fourth_2->next = fifth_2;
     fifth_2->next = sixth_2;
     sixth_2->next = NULL;
-    merge(head, head_2);
+    sortedMerge(head, head_2);
 
     return 0;
 }
