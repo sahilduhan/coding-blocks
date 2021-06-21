@@ -13,7 +13,19 @@ public:
 };
 Node *reverse(Node *head)
 {
-    
+    if (head == NULL || head->next == NULL)
+    {
+        return head;
+    }
+    Node *ans = reverse(head->next);
+    Node *temp = ans;
+    while (temp != NULL)
+    {
+        temp = temp->next;
+    }
+    temp->next = head;
+    head->next = NULL;
+    return ans;
 }
 int main()
 {
@@ -29,6 +41,7 @@ int main()
     third->next = fourth;
     fourth->next = fifth;
     fifth->next = sixth;
+    reverse(head);
 
     return 0;
 }
