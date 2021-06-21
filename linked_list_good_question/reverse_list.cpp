@@ -11,9 +11,12 @@ public:
         next = NULL;
     }
 };
+Node *reverse(Node *head)
+{
+    
+}
 int main()
 {
-
 
     Node *head = new Node(100);
     Node *second = new Node(200);
