@@ -13,7 +13,7 @@ int main()
     {
         cout << "value:" << it->first << " and key is: " << it->second << endl;
         it++;
-    }
+        // amf?
 
-    return 0;
-}
+        return 0;
+    }
