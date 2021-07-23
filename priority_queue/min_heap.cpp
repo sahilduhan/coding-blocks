@@ -40,6 +40,39 @@ public:
             child_index = parent_index;
         }
     }
+    int remove_min()
+    {
+        if (is_empty())
+        {
+            return 0;
+        }
+        int ans = arr[0];
+        arr[0] = arr[arr.size() - 1];
+        arr.pop_back();
+        int parent_index = 0;
+        int left_child = 2 * parent_index + 1;
+        int right_child = 2 * parent_index + 2;
+        // while ()
+        {
+            int min_index = parent_index;
+            if (arr[min_index] > arr[left_child])
+            {
+                min_index = left_child;
+            }
+            if (arr[right_child] < arr[min_index])
+            {
+                min_index = right_child;
+            }
+            int temp = arr[min_index];
+            arr[min_index] = arr[parent_index];
+            arr[parent_index] = temp;
+            parent_index = min_index;
+            int left_child = 2 * parent_index + 1;
+            int right_child = 2 * parent_index + 2;
+        }
+
+        return ans;
+    }
 };
 int main()
 {
