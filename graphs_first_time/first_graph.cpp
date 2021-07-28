@@ -1,14 +1,34 @@
 #include <bits/stdc++.h>
 using namespace std;
+void print(int **edges, int vertices, int start_vertex, bool *visited)
+{
+    cout << start_vertex << endl;
+    visited[start_vertex] = true;
+    for (int i = 0; i < vertices; i++)
+    {
+        if (i == start_vertex)
+        {
+            continue;
+        }
+        if (edges[i][start_vertex] == 1)
+        {
+            if (visited[i])
+            {
+                continue;
+            }
+            print(edges, vertices, i, visited);
+        }
+    }
+}
 int main()
 {
-    int n, e;
-    cin >> n >> e;
-    int **edges = new int *[n];
-    for (int i = 0; i < n; i++)
+    int vertices, e;
+    cin >> vertices >> e;
+    int **edges = new int *[vertices];
+    for (int i = 0; i < vertices; i++)
     {
-        edges[i] = new int[n];
-        for (int j = 0; j < n; j++)
+        edges[i] = new int[vertices];
+        for (int j = 0; j < vertices; j++)
         {
             edges[i][j] = 0;
         }
@@ -20,5 +40,12 @@ int main()
         edges[f][s] = 1;
         edges[s][f] = 1;
     }
+    bool *visited = new bool[vertices];
+    for (int i = 0; i < vertices; i++)
+    {
+        visited[i] = false;
+    }
+
+    print(edges, vertices, 0, visited);
     return 0;
 }
