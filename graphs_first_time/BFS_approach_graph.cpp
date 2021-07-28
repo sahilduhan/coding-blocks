@@ -1,6 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
-
+void print_BFS(int **edges, int start)
+{
+}
 int main()
 {
     int vertices, e;
@@ -18,8 +20,14 @@ int main()
     {
         int f, s;
         cin >> f >> s;
-        edges[f][s] = 0;
-        edges[s][f] = 0;
+        edges[f][s] = 1;
+        edges[s][f] = 1;
     }
+    bool *visited = new bool[vertices];
+    for (int i = 0; i < vertices; i++)
+    {
+        visited[i] = false;
+    }
+    print_BFS( edges, 0);
     return 0;
 }
