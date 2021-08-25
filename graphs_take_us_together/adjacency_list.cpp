@@ -3,6 +3,7 @@ using namespace std;
 int main()
 {
     int node, edges;
+    // node = vertices
     cin >> node >> edges;
     vector<int> adj[node + 1];
     for (int i = 0; i < edges; i++)
