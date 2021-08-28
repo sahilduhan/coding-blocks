@@ -16,6 +16,7 @@ void greater_to_right(int *arr, int size)
         }
         ans.push(arr[i]);
     }
+    reverse(final_ans.begin(), final_ans.end());
     for(int i = 0; i < final_ans.size(); i++) cout<<final_ans[i]<<" ";
 }
 int main()
