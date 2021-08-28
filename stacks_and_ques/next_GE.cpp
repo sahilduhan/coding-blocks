@@ -4,7 +4,7 @@ void greater_to_right(int *arr, int size)
 {
     stack<int> ans;
     vector<int> final_ans;
-    for (int i = size - 1; i >= 0; i--)
+    for (int i = size; i >= 0; i--)
     {
         if (ans.size() == 0) final_ans.push_back(-1);
         if (ans.top() > arr[i] && ans.size() > 0) final_ans.push_back(ans.top());
@@ -16,6 +16,7 @@ void greater_to_right(int *arr, int size)
         }
         ans.push(arr[i]);
     }
+    for(int i = 0; i < final_ans.size(); i++) cout<<final_ans[i]<<" ";
 }
 int main()
 {
