@@ -13,4 +13,6 @@ int main()
         adj[u].push_back({v, w});
         adj[v].push_back({u, w});
     }
+
+    return 0;
 }
