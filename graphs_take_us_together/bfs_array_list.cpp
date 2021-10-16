@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-vector<int> bfsofGraph(int v, vector<int> adj_matrix[])
+vector<int> bfsofGraph(int v, vector<int> adj_list[])
 {
     vector<int> bfs;
     vector<int> visited(v + 1, 0);
@@ -16,7 +16,7 @@ vector<int> bfsofGraph(int v, vector<int> adj_matrix[])
                 int node = pending.front();
                 pending.pop();
                 bfs.push_back(node);
-                for (auto it : adj_matrix[node])
+                for (auto it : adj_list[node])
                 {
                     if (!visited[it])
                     {
