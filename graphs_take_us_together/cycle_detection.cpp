@@ -1,6 +1,14 @@
 #include <bits/stdc++.h>
 using namespace std;
+void traversebfs()
+{
+    
+}
+bool cycleDetection()
+{
 
+    return false;
+}
 int main()
 {
     int vertices, edges;
@@ -14,6 +22,5 @@ int main()
         adj[u].push_back(v);
         adj[v].push_back(u);
     }
-    return 0;
     return 0;
 }
