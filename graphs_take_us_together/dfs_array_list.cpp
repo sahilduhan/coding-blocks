@@ -37,5 +37,4 @@ int main()
         adj[v].push_back(u);
     }
     return 0;
-    return 0;
 }
