@@ -18,7 +18,6 @@ bool isCycle(int node, vector<int> adjList){
             inDegree[it]--;
             if(inDegree[it]==0) q.push(it);
         }
-
     }
     if(cnt==node) return false;
     return true;
