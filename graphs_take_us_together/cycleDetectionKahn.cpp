@@ -6,11 +6,9 @@ bool isCycle(int node, vector<int> adjList){
     for(int i=0;i<node;i++){
         for(auto it: adjList) inDegree[it]++;
     }
-
     for(int i=0;i<node;i++){
         if(inDegree[i]==0) q.push(i);
     }
-
     int cnt=0;
     while(q.empty()){
         int val= q.front();
