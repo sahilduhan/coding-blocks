@@ -19,30 +19,30 @@ void in_order(binary_tree_node *root)
         return;
     }
     in_order(root->left);
-    cout << root->data << " ";
+    cout << root->data <<" ";
     in_order(root->right);
 }
 int main()
 {
 
-    binary_tree_node *root = new binary_tree_node(10);
+    binary_tree_node *root = new binary_tree_node(7);
 
     //left side of the tree
 
     root->left = new binary_tree_node(1);
-    root->right = new binary_tree_node(2);
-    root->left->left = new binary_tree_node(3);
-    root->left->right = new binary_tree_node(4);
-    root->left->left->right = new binary_tree_node(7);
-    root->left->left->right->right = new binary_tree_node(13);
-    root->left->right->left = new binary_tree_node(8);
+    root->left->left = new binary_tree_node(0);
+    root->left->right = new binary_tree_node(3);
+    root->left->right->right = new binary_tree_node(5);
+    root->left->right->right->right = new binary_tree_node(6);
+    root->left->right->right->left = new binary_tree_node(4);
+    root->left->right->left = new binary_tree_node(2);
+    
 
     //right side of the tree
-
-    root->right->left = new binary_tree_node(5);
-    root->right->right = new binary_tree_node(6);
-    root->right->right->left = new binary_tree_node(11);
-    root->right->right->right = new binary_tree_node(12);
+    root->right = new binary_tree_node(9);
+    root->right->left = new binary_tree_node(8);
+    root->right->right = new binary_tree_node(10);
     in_order(root);
+    cout<<endl;
     return 0;
 }
